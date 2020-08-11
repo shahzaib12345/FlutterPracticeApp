@@ -15,7 +15,7 @@ class ProductsBuilder extends StatelessWidget {
     if (products.isNotEmpty) {
       displayWidget = ListView.builder(
         itemBuilder: (BuildContext ctxt, int index) {
-          return _productItemBuilder(products.elementAt(index),context);
+          return _productItemBuilder(products.elementAt(index), context);
         },
         itemCount: products.length,
         shrinkWrap: true,
@@ -28,7 +28,7 @@ class ProductsBuilder extends StatelessWidget {
     return displayWidget;
   }
 
-  Widget _productItemBuilder(ProductModel productModel,BuildContext context) {
+  Widget _productItemBuilder(ProductModel productModel, BuildContext context) {
     return Card(
       elevation: 5,
       borderOnForeground: true,
@@ -56,11 +56,7 @@ class ProductsBuilder extends StatelessWidget {
               FlatButton(
                 child: Text("View Details"),
                 onPressed: () {
-                  Navigator.push(context,
-                    MaterialPageRoute(
-                        builder: (BuildContext context) =>
-                            ProductDetailsPage()),
-                  );
+                  Navigator.pushNamed(context, '/productDetails');
                 },
               )
             ],
